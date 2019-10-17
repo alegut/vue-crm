@@ -46,6 +46,7 @@
       <button
           class="btn waves-effect waves-light auth-submit"
           type="submit"
+          :disabled="$v.$invalid"
       >
         Зарегистрироваться
         <i class="material-icons right">send</i>
@@ -78,7 +79,7 @@ export default {
     agree: {checked: v => v}
   },
   methods: {
-    submitHandler() {
+    async submitHandler() {
       if(this.$v.$invalid) {
         this.$v.$touch();
         return;
@@ -86,10 +87,9 @@ export default {
       const formData = {
         email: this.email,
         password: this.password,
-        name: this.name,
-        agree: this.agree,
+        name: this.name
       }
-      console.log(formData);
+      await this.$store.dispatch('register', formData);
       this.$router.push('/');
     }
   }
