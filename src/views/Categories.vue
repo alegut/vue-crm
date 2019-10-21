@@ -17,10 +17,16 @@
 <script>
 import CategoryCreate from '@/components/CategoryCreate'
 import CategoryEdit from '@/components/CategoryEdit'
+import localizeFilter from '@/filters/localize.filter'
 
 
 export default {
   name: 'categories',
+  metaInfo() {
+    return {
+      title: localizeFilter('Categories')
+    }
+  },
   data: () => ({
     categories: [],
     loading: true,

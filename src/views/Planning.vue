@@ -31,9 +31,15 @@
 <script>
 import {mapGetters} from 'vuex';
 import currencyFilter from '@/filters/currency.filter'
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'planning',
+  metaInfo() {
+    return {
+      title: localizeFilter('Planning')
+    }
+  },
   data: () => ({
     loading: true, 
     categories: []

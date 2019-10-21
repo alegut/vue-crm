@@ -20,10 +20,16 @@
 <script>
 import HomeBill from '@/components/HomeBill';
 import HomeCurrency from '@/components/HomeCurrency';
+import localizeFilter from '@/filters/localize.filter'
 
 
 export default {
   name: 'home',
+  metaInfo() {
+    return {
+      title: localizeFilter('Home')
+    }
+  },
   data: () => ({
     loading: true,
     currency: null,

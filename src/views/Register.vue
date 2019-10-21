@@ -63,9 +63,15 @@
 
 <script>
 import {email, required, minLength} from 'vuelidate/lib/validators';
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'register',
+  metaInfo() {
+    return {
+      title: localizeFilter('Register')
+    }
+  },
   data: () => ({
     email: '',
     password: '',

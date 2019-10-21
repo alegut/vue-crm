@@ -79,9 +79,15 @@
 <script>
 import {required, minValue} from 'vuelidate/lib/validators';
 import {mapGetters} from 'vuex';
+import localizeFilter from '@/filters/localize.filter'
 
 export default {
   name: 'record',
+  metaInfo() {
+    return {
+      title: localizeFilter('Record')
+    }
+  },
   data: () => ({
     loading: true,
     select: null,

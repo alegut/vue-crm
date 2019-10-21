@@ -30,8 +30,14 @@
 </template>
 
 <script>
+import localizeFilter from '@/filters/localize.filter'
 export default {
   name: 'detail',
+  metaInfo() {
+    return {
+      title: localizeFilter('Detail')
+    }
+  },
   data: () => ({
     record: null,
     loading: true
